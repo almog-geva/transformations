@@ -1,0 +1,48 @@
+<transformations>
+
+    <transformation last="false">
+        <content-type>
+            <string substring="text/html" match="contains"/>
+        </content-type>
+        <transformer>
+            <xpath-html-transformer last="false">
+                <accessor>
+                    <tag/>
+                </accessor>
+                <filter>
+                    <pattern>n=\d-\d+\s*$</pattern>
+                </filter>
+                <transformer>
+                    <pattern-replacer pattern="\d" replace="all">*</pattern-replacer>
+                </transformer>
+                <xpath>//*[name()!='script']/text()</xpath>
+            </xpath-html-transformer>
+        </transformer>
+    </transformation>
+
+    <transformation last="false">
+        <content-type>
+            <string substring="text/html" match="contains"/>
+        </content-type>
+        <uri>
+            <string substring="/Trade/Glossary.aspx" match="contains"/>
+        </uri>
+        <transformer>
+            <xpath-html-transformer last="false">
+                <accessor>
+                    <tag/>
+                </accessor>
+                <transformer>
+                    <pattern-replacer pattern="\w" replace="all">#</pattern-replacer>
+                </transformer>
+                <xpath>
+                    <![CDATA[
+                    //tr[contains(td[1],"Price")]/td[2]/text()
+                    ]]>
+                </xpath>
+                <anti-xpath>//script/*</anti-xpath>
+            </xpath-html-transformer>
+        </transformer>
+    </transformation>
+
+</transformations>

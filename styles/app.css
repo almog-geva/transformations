@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    min-height: 54px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-text {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    /*align-content: stretch;*/
+    /*justify-content: space-around;*/
+}
+
+.editor-wrapper {
+    box-sizing: border-box;
+    /*width: 33%;*/
+    position: relative;
+    margin-right: 10px;
+    /*flex-basis: 33%;*/
+    /*flex-grow: 1;*/
+    flex: 1;
+}
+
+.editor-wrapper.resizable {
+    flex: 0 0 33%;
+}
+
+section-header {
+    display: block;
+    background-color: #545454;
+}
+
+section-header > div {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+    height:28px;
+    position: relative;
+}
+
+section-header .section-title {
+    padding-top: 4px;
+    display: inline-block;
+}
+
+section-header button.md-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 18px;
+    font-size: 12px;
+    margin: 0;
+    min-height: initial;
+    line-height: 20px;
+    text-transform: initial;
+}
+
+.preview-wrapper {
+    box-sizing: border-box;
+    position: relative;
+    flex: 1;
+}
+
+.preview-wrapper.resizable {
+    flex: 0 0 33%;
+}
+
+.preview-wrapper iframe {
+    width: 100%;
+    height: 97%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.CodeMirror {
+    height: 97%;
+    width: 100%;
+    position: absolute;
+}
+
+.preview-wrapper .CodeMirror {
+    visibility: hidden;
+}
+
+.CodeMirror.tr-show {
+    visibility: visible;
+}
+
+textarea {
+    height: 0;
+    width:0;
+}
+
+header > .sep {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+button.md-button.btn-generate {
+    height: 30px;
+    padding: 0 50px;
+    margin: 9px 10px 0px;
+    background-color: #007df1 !important;
+    color: white;
+}
+
+.rg-right, .rg-left, .rg-top, .rg-bottom {
+    background-color: rgba(197, 197, 197, 0.39);
+    width: 10px;
+}
+
+.rg-right {
+    margin-right: -10px;
+}
+
+.rg-left {
+    margin-left: -10px;
+}
+
+.rg-right span, .rg-left span {
+    margin: -10px 0 0 2.5px;
+    width: 4px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
